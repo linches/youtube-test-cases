@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using YoutubeTesting.Pages;
 
 namespace YoutubeTesting
 {
@@ -12,8 +13,7 @@ namespace YoutubeTesting
         [SetUp]
         public void Setup()
         {
-            _driver = new ChromeDriver();
-            _driver.Navigate().GoToUrl("https://www.youtube.com");
+            _driver = new  WebDriverManager().GetDriver("https://www.youtube.com");
         }
 
         [TearDown]
@@ -25,8 +25,11 @@ namespace YoutubeTesting
         [Test]
         public void FirstSeleniumTest()
         {
-            var TrendingVideos = new TC_01_OpenTrendingVideo(_driver);
-
+           var trendingVideos = new YouTubeTrendingPage(_driver);
+           trendingVideos.ClikcByText("Trending");
+           var titleOnTrendingPage = trendingVideos.GetTitleByVideoIndex(1);
+           var viewCountOnTrendingPage = trendingVideos.GetViewsByVideoIndex(1);
+           trendingVideos.OpenTrendingVideoByIndex(1);
         }
 
     }
