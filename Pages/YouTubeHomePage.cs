@@ -19,6 +19,11 @@ namespace YoutubeTesting.Pages
             _driver.FindElement(By.Id("search")).SendKeys(textLookUpText);
             _driver.FindElement(By.Id("search-icon-legacy")).Click();
         }
+
+        public string GetTitleByVideoIndex(int index)
+        {
+            return _driver.FindElement(By.XPath($"(//*[@id='title-wrapper']//a[@title])[{index}]")).Text;
+        }
     }
 }
 

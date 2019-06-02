@@ -23,7 +23,7 @@ namespace YoutubeTesting
         }
 
         [Test]
-        public void FirstSeleniumTest()
+        public void TrendingVideosTitleAndCount()
         {
             var trendingVideos = new YouTubeTrendingPage(_driver);
             trendingVideos.ClikcByText("Trending");
@@ -42,10 +42,13 @@ namespace YoutubeTesting
         }
 
         [Test]
-        public void FirstSeleniumTest1()
+        public void SearchFunctiality()
         {
             var homePage = new YouTubeHomePage(_driver);
-            homePage.SearchVideo("Nothing More - This Is The Time (Ballast)");
+            var expectedTitile = "Nothing More - This Is The Time (Ballast)";
+            homePage.SearchVideo(expectedTitile);
+            var actaulTitile = homePage.GetTitleByVideoIndex(1);
+            Assert.AreEqual(expectedTitile, actaulTitile);
         }
     }
 }
