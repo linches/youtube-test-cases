@@ -40,5 +40,12 @@ namespace YoutubeTesting
             Assert.AreEqual(titleOnTrendingPage, titleOnVideoPage);
             Assert.AreEqual(viewCountOnTrendingPage, viewCountOnVideoPage);
         }
+
+        [Test]
+        public void FirstSeleniumTest1()
+        {
+            var homePage = new YouTubeHomePage(_driver);
+            homePage.SearchVideo("Nothing More - This Is The Time (Ballast)");
+        }
     }
 }
