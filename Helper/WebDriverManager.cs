@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using System;
 
-namespace YoutubeTesting.Pages
+namespace YoutubeTesting.Helper
 {
     public class WebDriverManager
     {
