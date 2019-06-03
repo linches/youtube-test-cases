@@ -13,7 +13,6 @@ Steps:
   4. Open the #1 trending video
 
  Expected result: The view count and title matches what was displayed on the video list.
- Actual result: as expected.
  
 # TC_02 - YouTubeHomePage
 Title: Trending videos list item matches the details displayed on the video player page
@@ -25,4 +24,3 @@ Steps:
   4. Open the expected video
 
  Expected result: The title matches what was displayed.
- Actual result: as expected.
